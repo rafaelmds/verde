@@ -13,6 +13,14 @@
 
 
 
+.. rubric:: Classes
+
+.. autosummary::
+  :toctree: ./
+
+  verde.ScipyGridder
+
+
 
 
 
@@ -22,6 +30,20 @@
 
 .. autosummary::
   :toctree: ./
+
+  verde.block_reduce
+
+  verde.block_region
+
+  verde.get_region
+
+  verde.grid_coordinates
+
+  verde.inside
+
+  verde.profile_coordinates
+
+  verde.scatter_points
 
   verde.test
 

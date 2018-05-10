@@ -1,0 +1,12 @@
+verde.block\_reduce
+===================
+
+.. currentmodule:: verde
+
+.. autofunction:: block_reduce
+
+.. include:: backreferences/verde.block_reduce.examples
+
+.. raw:: html
+
+     <div style='clear:both'></div>

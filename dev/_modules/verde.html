@@ -32,6 +32,7 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -87,8 +88,9 @@
             
               <p class="caption"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/index.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
 </ul>
@@ -180,6 +182,13 @@
 <span class="kn">from</span> <span class="nn">._version</span> <span class="k">import</span> <span class="n">get_versions</span> <span class="k">as</span> <span class="n">_get_versions</span>
 
 <span class="c1"># Import functions/classes to make the API</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">.coordinates</span> <span class="k">import</span> <span class="n">scatter_points</span><span class="p">,</span> <span class="n">grid_coordinates</span><span class="p">,</span> <span class="n">inside</span><span class="p">,</span> \
+    <span class="n">profile_coordinates</span><span class="p">,</span> <span class="n">block_region</span><span class="p">,</span> <span class="n">get_region</span>
+<span class="kn">from</span> <span class="nn">.grid_math</span> <span class="k">import</span> <span class="n">block_reduce</span>
+<span class="kn">from</span> <span class="nn">.scipy_bridge</span> <span class="k">import</span> <span class="n">ScipyGridder</span>
+
+
 <span class="c1"># Get the version number through versioneer</span>
 <span class="n">__version__</span> <span class="o">=</span> <span class="n">_get_versions</span><span class="p">()[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span>
 <span class="n">__commit__</span> <span class="o">=</span> <span class="n">_get_versions</span><span class="p">()[</span><span class="s1">&#39;full-revisionid&#39;</span><span class="p">]</span>
@@ -240,7 +249,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018-2018, Leonardo Uieda.
-      Last updated on Apr 26, 2018.
+      Last updated on May 10, 2018.
 
     </p>
   </div>
@@ -284,9 +293,7 @@
 
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script> 
 

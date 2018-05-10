@@ -1,0 +1,38 @@
+.. raw:: html
+
+    <div class="api-module">
+
+``verde.base``
+-------------------------
+
+.. raw:: html
+
+    <hr>
+
+.. automodule:: verde.base
+
+
+
+.. rubric:: Classes
+
+.. autosummary::
+  :toctree: ./
+
+  verde.base.BaseGridder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. raw:: html
+
+    </div>

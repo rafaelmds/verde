@@ -1,0 +1,12 @@
+verde.block\_region
+===================
+
+.. currentmodule:: verde
+
+.. autofunction:: block_region
+
+.. include:: backreferences/verde.block_region.examples
+
+.. raw:: html
+
+     <div style='clear:both'></div>

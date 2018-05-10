@@ -32,11 +32,12 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="verde.test" href="verde.test.html" />
-    <link rel="prev" title="Installing" href="../install.html" />
+    <link rel="next" title="verde.ScipyGridder" href="verde.ScipyGridder.html" />
+    <link rel="prev" title="Getting started" href="../tutorials/getting-started.html" />
     
     <script src="../_static/require.js"></script>
 
@@ -89,11 +90,30 @@
             
               <p class="caption"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/index.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#verde"><code class="docutils literal notranslate"><span class="pre">verde</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="verde.ScipyGridder.html">verde.ScipyGridder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.block_reduce.html">verde.block_reduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.block_region.html">verde.block_region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.get_region.html">verde.get_region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.grid_coordinates.html">verde.grid_coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.inside.html">verde.inside</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.profile_coordinates.html">verde.profile_coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.scatter_points.html">verde.scatter_points</a></li>
 <li class="toctree-l3"><a class="reference internal" href="verde.test.html">verde.test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#verde-datasets"><code class="docutils literal notranslate"><span class="pre">verde.datasets</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="verde.datasets.CheckerBoard.html">verde.datasets.CheckerBoard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.datasets.fetch_baja_bathymetry.html">verde.datasets.fetch_baja_bathymetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.datasets.fetch_rio_magnetic_anomaly.html">verde.datasets.fetch_rio_magnetic_anomaly</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#verde-base"><code class="docutils literal notranslate"><span class="pre">verde.base</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="verde.base.BaseGridder.html">verde.base.BaseGridder</a></li>
 </ul>
 </li>
 </ul>
@@ -201,21 +221,6 @@
     margin-top: -19px;
 }
 
-/* nice headers on first paragraph of info/warning boxes */
-.admonition .first {
-    margin: -12px;
-    padding: 6px 12px;
-    margin-bottom: 12px;
-    color: #fff;
-    line-height: 1;
-    display: block;
-}
-.admonition.warning .first {
-    background: #f0b37e;
-}
-.admonition.note .first {
-    background: #6ab0de;
-}
 .admonition > p:before {
     margin-right: 4px;  /* make room for the exclamation icon */
 }
@@ -225,6 +230,18 @@
 <div class="api-module"><div class="section" id="verde">
 <h2><code class="docutils literal notranslate"><span class="pre">verde</span></code><a class="headerlink" href="#verde" title="Permalink to this headline">¶</a></h2>
 <hr><span class="target" id="module-verde"></span><p>The Verde public API.</p>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="verde.ScipyGridder.html#verde.ScipyGridder" title="verde.ScipyGridder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.ScipyGridder</span></code></a>([method,&nbsp;extra_args])</td>
+<td>A scipy.interpolate based gridder for scalar Cartesian data.</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Functions</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -232,8 +249,76 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="verde.test.html#verde.test" title="verde.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.test</span></code></a>([doctest,&nbsp;verbose,&nbsp;coverage])</td>
+<tr class="row-odd"><td><a class="reference internal" href="verde.block_reduce.html#verde.block_reduce" title="verde.block_reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.block_reduce</span></code></a>(easting,&nbsp;northing,&nbsp;data,&nbsp;…)</td>
+<td>Apply a reduction operation to the data in blocks (windows).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="verde.block_region.html#verde.block_region" title="verde.block_region"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.block_region</span></code></a>(region,&nbsp;spacing[,&nbsp;adjust])</td>
+<td>Divide a region into blocks and yield the boundaries of each block.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="verde.get_region.html#verde.get_region" title="verde.get_region"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.get_region</span></code></a>(easting,&nbsp;northing)</td>
+<td>Get the bounding region of the given coordinates.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="verde.grid_coordinates.html#verde.grid_coordinates" title="verde.grid_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.grid_coordinates</span></code></a>(region[,&nbsp;shape,&nbsp;…])</td>
+<td>Generate the coordinates for each point on a regular grid.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="verde.inside.html#verde.inside" title="verde.inside"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.inside</span></code></a>(easting,&nbsp;northing,&nbsp;region[,&nbsp;…])</td>
+<td>Determine which points fall inside a given region.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="verde.profile_coordinates.html#verde.profile_coordinates" title="verde.profile_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.profile_coordinates</span></code></a>(point1,&nbsp;point2,&nbsp;size)</td>
+<td>Coordinates for a profile along a line between two points.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="verde.scatter_points.html#verde.scatter_points" title="verde.scatter_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.scatter_points</span></code></a>(region,&nbsp;size[,&nbsp;…])</td>
+<td>Generate the coordinates for a random scatter of points.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="verde.test.html#verde.test" title="verde.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.test</span></code></a>([doctest,&nbsp;verbose,&nbsp;coverage])</td>
 <td>Run the test suite.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-module"></div>
+<div class="section" id="verde-datasets">
+<h2><code class="docutils literal notranslate"><span class="pre">verde.datasets</span></code><a class="headerlink" href="#verde-datasets" title="Permalink to this headline">¶</a></h2>
+<hr><span class="target" id="module-verde.datasets"></span><p>Loading test data and generating synthetic datasets.</p>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="verde.datasets.CheckerBoard.html#verde.datasets.CheckerBoard" title="verde.datasets.CheckerBoard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.datasets.CheckerBoard</span></code></a>([amplitude,&nbsp;…])</td>
+<td>Generate synthetic data in a checkerboard pattern.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="verde.datasets.fetch_baja_bathymetry.html#verde.datasets.fetch_baja_bathymetry" title="verde.datasets.fetch_baja_bathymetry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.datasets.fetch_baja_bathymetry</span></code></a>([…])</td>
+<td>Fetch sample bathymetry data from Baja California.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="verde.datasets.fetch_rio_magnetic_anomaly.html#verde.datasets.fetch_rio_magnetic_anomaly" title="verde.datasets.fetch_rio_magnetic_anomaly"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.datasets.fetch_rio_magnetic_anomaly</span></code></a>([…])</td>
+<td>Fetch sample total-field magnetic anomaly data from Rio de Janeiro, Brazil.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-module"></div>
+<div class="section" id="verde-base">
+<h2><code class="docutils literal notranslate"><span class="pre">verde.base</span></code><a class="headerlink" href="#verde-base" title="Permalink to this headline">¶</a></h2>
+<hr><span class="target" id="module-verde.base"></span><p>Base classes for all gridders.</p>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="verde.base.BaseGridder.html#verde.base.BaseGridder" title="verde.base.BaseGridder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.base.BaseGridder</span></code></a></td>
+<td>Base class for gridders.</td>
 </tr>
 </tbody>
 </table>
@@ -248,10 +333,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="verde.test.html" class="btn btn-neutral float-right" title="verde.test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="verde.ScipyGridder.html" class="btn btn-neutral float-right" title="verde.ScipyGridder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../install.html" class="btn btn-neutral" title="Installing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../tutorials/getting-started.html" class="btn btn-neutral" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -261,7 +346,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018-2018, Leonardo Uieda.
-      Last updated on Apr 26, 2018.
+      Last updated on May 10, 2018.
 
     </p>
   </div>
@@ -305,9 +390,7 @@
 
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script> 
 
